@@ -1,9 +1,9 @@
-let pause2 = 0
+let MicroSecsInSeconds = 1000000
+let pauseInSeconds = 0.5
+let pauseInMicroSeconds = MicroSecsInSeconds * pauseInSeconds
 basic.forever(function on_forever() {
-    
-    pause2 = 100000
     led.plot(0, 0)
-    control.waitMicros(pause2)
+    control.waitMicros(pauseInMicroSeconds)
     led.unplot(0, 0)
-    control.waitMicros(pause2)
+    control.waitMicros(pauseInMicroSeconds)
 })

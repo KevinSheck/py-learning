@@ -1,10 +1,10 @@
-pause2 = 0
+MicroSecsInSeconds = 1000000
+pauseInSeconds = 0.5
+pauseInMicroSeconds = MicroSecsInSeconds * pauseInSeconds
 
 def on_forever():
-    global pause2
-    pause2 = 100000
     led.plot(0, 0)
-    control.wait_micros(pause2)
+    control.wait_micros(pauseInMicroSeconds)
     led.unplot(0, 0)
-    control.wait_micros(pause2)
+    control.wait_micros(pauseInMicroSeconds)
 basic.forever(on_forever)
